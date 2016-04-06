@@ -1,0 +1,19 @@
+<schema name="lnoh_studreport_settings">
+<comment>Contiene los valores para los estados del semaforo (Verde, naranja y amarillo)</comment>
+
+  <table name="lnoh_studreport_settings">
+  
+  	<column name="pk1" data-type="int" nullable="false" identity="true" />
+    <column name="dias_estado_verde" data-type="int" nullable="false" identity="false" />
+   	<column name="dias_estado_naranja" data-type="int" nullable="false" identity="false" />
+   	<column name="dias_estado_amarillo" data-type="int" nullable="false" identity="false" />
+    
+    <primary-key name="lnoh_student_report_pk1">
+      <columnref name="pk1" />
+    </primary-key>
+
+ 
+  </table>
+
+</schema>
+

@@ -1,0 +1,33 @@
+<schema name="lnoh_Student_Management">
+<comment>This schema defines a table used by the application to store a Blackboard user's favorite Blackboard course</comment>
+
+  <table name="lnoh_Student_Management">
+  
+  	<column name="id" data-type="int" nullable="false" identity="true" comment="This is the primary key for the table, in Oracle it should be updated using the sequence lnoh_Student_Management_seq which will be created automatically" />
+     
+    <column name="pk1" data-type="int" nullable="false" identity="true" comment="This is the foreign key for the table" />
+
+    <column name="dtcreated" data-type="datetime" nullable="false" identity="false" comment="date in which the contact was made" />
+
+   	<column name="motive" data-type="varchar(100)" nullable="false" identity="false" comment="the motive for the contact action" />
+   	
+   	<column name="channel" data-type="varchar(100)" nullable="false" identity="false" comment="this is the chnnel through where the contact was made email, phone, in person" />
+   	
+   	<column name="observations" data-type="varchar(4000)" nullable="false" identity="false" comment="This are the observations" />
+   	
+   	<column name="contact_type" data-type="varchar(1)" nullable="false" identity="false" comment="This is the contact type coordinator = C student = S" />
+   	
+   	<column name="student_response" data-type="varchar(100)" nullable="true" identity="false" comment="This is the students response" />
+    
+    <primary-key name="lnoh_Student_Management_pk1" comment="Unique primary key">
+      <columnref name="id" />
+    </primary-key>
+    
+    <foreign-key name="lnoh_Student_Management_fk" reference-table="users" on-delete="cascade" comment="This is a foreign key referencing the primary key of the users table, referential action cascade on delete.">
+      <columnref name="pk1"/>
+    </foreign-key>
+ 
+  </table>
+
+</schema>
+
